@@ -9,8 +9,8 @@
  * transcurrido y llamar a la función **getTimeElapsed()** cuando se quiera obtener una
  * cadena de tiempo con el citado tiempo.
  * 
- * @section author Author
- * - Created by Daniel Calvo 2020
+ * @author Daniel Calvo Gonzalez
+ *
  */
 #include <Arduino.h>
 #include "TimeElapsed.h"
@@ -36,6 +36,7 @@ TimeElapsed::TimeElapsed(byte days, byte hours, byte minutes, byte seconds) {
   * @return el número de segundos transcurridos
   */
 byte TimeElapsed::getSeconds() {
+  loopTimeElapsed();
   return _seconds;
 }
 
@@ -45,6 +46,7 @@ byte TimeElapsed::getSeconds() {
   * @return el número de minutos transcurridos
   */
 byte TimeElapsed::getMinutes() {
+  loopTimeElapsed();
   return _minutes;
 }
 
@@ -54,6 +56,7 @@ byte TimeElapsed::getMinutes() {
   * @return el número de horas transcurridas
   */
 byte TimeElapsed::getHours() {
+  loopTimeElapsed();
   return _hours;
 }
 
@@ -63,6 +66,7 @@ byte TimeElapsed::getHours() {
   * @return el número de dias transcurridos
   */
 byte TimeElapsed::getDays() {
+  loopTimeElapsed();
   return _days;
 }
 

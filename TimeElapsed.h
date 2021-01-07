@@ -1,6 +1,8 @@
 /**
  * @file timeElapsed.h
  * 
+ * @author Daniel Calvo
+ *
  */
 #ifndef TIMEELAPSED_H
 #define TIMEELAPSED_H
@@ -12,7 +14,9 @@
 #define MAX_LEN_TIMEELAPSED 13
 
 /**
- * Clase que contiene la información necesaria para un control del tiempo transcurrido.
+ * @brief Clase para el control del tiempo transcurrido.
+ *
+ * Contiene los miembros y funciones necesarias para un control del tiempo transcurrido.
  * 
  */
 class TimeElapsed {
