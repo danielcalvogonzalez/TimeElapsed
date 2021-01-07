@@ -1,0 +1,1 @@
+#1	Añadi nuevas formas de obtener la cadena de texto con la fecha

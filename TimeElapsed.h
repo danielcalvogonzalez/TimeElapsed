@@ -13,6 +13,8 @@
   */
 #define MAX_LEN_TIMEELAPSED 13
 
+enum TypeOfTexts { t_LONG, t_SECONDS, t_MINUTES, t_HOURS, t_DAYS };
+
 /**
  * @brief Clase para el control del tiempo transcurrido.
  *
@@ -33,7 +35,7 @@ class TimeElapsed {
     byte getMinutes();					///< Función getter para los minutos
     byte getHours();					///< Función getter para las horas
     byte getDays();					///< Función getter para los días
-    void getTimeElapsed(char *buffer, int nSizeBuffer); ///< Permite obtener en un array de char el tiempo transcurrido
+    void getTimeElapsed(char *buffer, int nSizeBuffer, TypeOfTexts format = t_LONG); ///< Permite obtener en un array de char el tiempo transcurrido
     void loopTimeElapsed();             		///< Función para actualizar los contadores internos
     void reset();                       		///< Reinicializa los contadores internos a 0 y empieza la cuenta
 };
