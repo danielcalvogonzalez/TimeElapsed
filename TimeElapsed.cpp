@@ -5,7 +5,7 @@
  * Lleva la gestión del tiempo medido en días, horas, minutos y segundos
  * desde un momento dado que es inicializada.
  * 
- * Se debe llamar regularmente la función **loopTimeElapsed()** para que actualice el tiempo
+ * Se debe llamar regularmente a la función **loopTimeElapsed()** para que actualice el tiempo
  * transcurrido y llamar a la función **getTimeElapsed()** cuando se quiera obtener una
  * cadena de tiempo con el citado tiempo.
  * 
@@ -116,14 +116,34 @@ void TimeElapsed::reset() {
   * @param buffer	Puntero al buffer donde se grabará la cadena de texto.
   * @param nSizeBuffer	Longitud en bytes del buffer.
   */
-void TimeElapsed::getTimeElapsed(char *buffer, int nSizeBuffer) {
+void TimeElapsed::getTimeElapsed(char *buffer, int nSizeBuffer, TypeOfTexts format) {
 
   loopTimeElapsed();
-  if (nSizeBuffer < MAX_LEN_TIMEELAPSED) {
-    buffer[0] = '\0';
-    return;
+  buffer[0] = '\0';
+  switch (format) {
+    case t_LONG:
+    case t_DAYS: 
+		  if (nSizeBuffer < MAX_LEN_TIMEELAPSED) {
+		    return;
+		  }
+		  snprintf(buffer, nSizeBuffer, "%02d:%02d:%02d:%02d", _days, _hours, _minutes, _seconds);
+		  break;
+    case t_SECONDS: if (nSizeBuffer < MAX_LEN_TIMEELAPSED - 9) {
+                    return;
+                  }
+                  snprintf(buffer, nSizeBuffer, "%02d", _seconds);
+                  break;
+    case t_MINUTES: if (nSizeBuffer < MAX_LEN_TIMEELAPSED - 6) {
+                    return;
+                  }
+                  snprintf(buffer, nSizeBuffer, "%02d:%02d", _minutes, _seconds);
+                  break;
+    case t_HOURS: if (nSizeBuffer < MAX_LEN_TIMEELAPSED - 3) {
+                    return;
+                  }
+                  snprintf(buffer, nSizeBuffer, "%02d:%02d:%02d", _hours, _minutes, _seconds);
+                  break;
   }
-  snprintf(buffer, nSizeBuffer, "%02d:%02d:%02d:%02d", _days, _hours, _minutes, _seconds);
 }
 
 /**
