@@ -5,7 +5,7 @@
  * Lleva la gestión del tiempo medido en días, horas, minutos y segundos
  * desde un momento dado que es inicializada.
  * 
- * Se debe llamar regularmente la función **loopTimeElapsed()** para que actualice el tiempo
+ * Se debe llamar regularmente a la función **loopTimeElapsed()** para que actualice el tiempo
  * transcurrido y llamar a la función **getTimeElapsed()** cuando se quiera obtener una
  * cadena de tiempo con el citado tiempo.
  * 
