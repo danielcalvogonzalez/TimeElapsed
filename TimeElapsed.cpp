@@ -28,6 +28,7 @@ TimeElapsed::TimeElapsed(byte days, byte hours, byte minutes, byte seconds) {
   _hours = hours;
   _minutes = minutes;
   _seconds = seconds;
+  lastUpdate = 0;
 }
 
 /**
@@ -107,6 +108,7 @@ void TimeElapsed::update(unsigned int nTicks) {
   */
 void TimeElapsed::reset() {
   _seconds = _minutes = _hours = _days = 0;
+  lastUpdate = millis();
 }
 
 /**
