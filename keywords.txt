@@ -1,0 +1,20 @@
+###########################################
+# Syntax Coloring Map For ESP8266-newping library
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+TimeElapsed	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+getSeconds	KEYWORD2
+getMinutes	KEYWORD2
+getHours	KEYWORD2
+getDays	KEYWORD2
+getTimeElapsed	KEYWORD2
+loopTimeElapsed	KEYWORD2
